@@ -172,8 +172,8 @@ To fix this you will either need to add a Cargo.toml file at that location, or c
                 projectName: project.name,
               },
               {
-                checkAllBranchesWhen: options.releaseGroup.checkAllBranchesWhen,
-                preid: options.releaseGroup.preid,
+                preid: options.preid,
+                checkAllBranchesWhen: options.releaseGroup.releaseTagPatternCheckAllBranchesWhen,
                 releaseTagPatternRequireSemver: options.releaseGroup.releaseTagPatternRequireSemver,
                 releaseTagPatternStrictPreid: options.releaseGroup.releaseTagPatternStrictPreid,
               }
