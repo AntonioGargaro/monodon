@@ -1,3 +1,13 @@
+## 2.3.1 (2026-01-08)
+
+### 🩹 Fixes
+
+- **rust:** release action for nx 21 ([f69cbed](https://github.com/AntonioGargaro/monodon/commit/f69cbed))
+
+### ❤️ Thank You
+
+- antoniogargaro
+
 ## 2.3.0 (2025-04-08)
 
 ### 🚀 Features
