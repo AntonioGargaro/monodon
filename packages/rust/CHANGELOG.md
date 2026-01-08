@@ -1,3 +1,13 @@
+## 2.3.2 (2026-01-08)
+
+### 🩹 Fixes
+
+- update executors to reference @antoniog ([c0c8008](https://github.com/AntonioGargaro/monodon/commit/c0c8008))
+
+### ❤️ Thank You
+
+- antoniogargaro
+
 ## 2.3.1 (2026-01-08)
 
 ### 🩹 Fixes
