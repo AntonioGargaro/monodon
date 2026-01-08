@@ -172,6 +172,7 @@ To fix this you will either need to add a Cargo.toml file at that location, or c
                 projectName: project.name,
               },
               {
+                // subject to breaking
                 preid: options.preid,
                 checkAllBranchesWhen: options.releaseGroup.releaseTagPatternCheckAllBranchesWhen,
                 releaseTagPatternRequireSemver: options.releaseGroup.releaseTagPatternRequireSemver,
