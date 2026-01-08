@@ -20,13 +20,8 @@ import {
   resolveSemverSpecifierFromConventionalCommits,
   resolveSemverSpecifierFromPrompt,
 } from 'nx/src/command-line/release/utils/resolve-semver-specifier';
-import { isValidSemverSpecifier } from 'nx/src/command-line/release/utils/semver';
-import {
-  ReleaseVersionGeneratorResult,
-  VersionData,
-  deriveNewSemverVersion,
-  validReleaseVersionPrefixes,
-} from 'nx/src/command-line/release/version';
+import { deriveNewSemverVersion, isValidSemverSpecifier } from 'nx/src/command-line/release/utils/semver';
+import { validReleaseVersionPrefixes } from 'nx/src/command-line/release/version';
 import { interpolate } from 'nx/src/tasks-runner/utils';
 import { prerelease } from 'semver';
 import {
@@ -35,7 +30,11 @@ import {
   parseCargoTomlWithTree,
   stringifyCargoToml,
 } from '../../utils/toml';
-import { ReleaseVersionGeneratorSchema } from './schema';
+import { ReleaseVersionGeneratorSchema } from 'nx/src/command-line/release/version-legacy';
+import {
+  ReleaseVersionGeneratorResult,
+  VersionData,
+} from 'nx/src/command-line/release/utils/shared-legacy';
 
 export async function releaseVersionGenerator(
   tree: Tree,
@@ -171,6 +170,12 @@ To fix this you will either need to add a Cargo.toml file at that location, or c
               releaseTagPattern,
               {
                 projectName: project.name,
+              },
+              {
+                checkAllBranchesWhen: options.releaseGroup.checkAllBranchesWhen,
+                preid: options.releaseGroup.preid,
+                releaseTagPatternRequireSemver: options.releaseGroup.releaseTagPatternRequireSemver,
+                releaseTagPatternStrictPreid: options.releaseGroup.releaseTagPatternStrictPreid,
               }
             );
             if (!latestMatchingGitTag) {

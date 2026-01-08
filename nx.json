@@ -11,9 +11,8 @@
     "releaseTagPattern": "{projectName}-{version}",
     "version": {
       "conventionalCommits": true,
-      "generatorOptions": {
-        "packageRoot": "dist/packages/{projectName}"
-      }
+      "preserveLocalDependencyProtocols": false,
+      "manifestRootsToUpdate": ["dist/packages/{projectName}"]
     },
     "changelog": {
       "projectChangelogs": {
