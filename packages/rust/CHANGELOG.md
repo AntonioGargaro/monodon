@@ -1,3 +1,13 @@
+## 2.3.3 (2026-01-08)
+
+### 🩹 Fixes
+
+- **version:** access properties correctly ([5a767be](https://github.com/AntonioGargaro/monodon/commit/5a767be))
+
+### ❤️ Thank You
+
+- antoniogargaro
+
 ## 2.3.2 (2026-01-08)
 
 ### 🩹 Fixes
