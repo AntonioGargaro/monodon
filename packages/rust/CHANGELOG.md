@@ -1,3 +1,13 @@
+## 2.3.4 (2026-01-08)
+
+### 🩹 Fixes
+
+- **version:** build before releasing ([788acab](https://github.com/AntonioGargaro/monodon/commit/788acab))
+
+### ❤️ Thank You
+
+- antoniogargaro
+
 ## 2.3.3 (2026-01-08)
 
 ### 🩹 Fixes
