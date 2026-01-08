@@ -10,7 +10,7 @@ describe('napi', () => {
 
     // The plugin has been built and published to a local registry in the jest globalSetup
     // Install the plugin built with the latest source code into the test repo
-    execSync(`yarn add -D @monodon/rust@e2e`, {
+    execSync(`yarn add -D @antoniog/rust@e2e`, {
       cwd: projectDirectory,
       stdio: 'inherit',
       env: process.env,
@@ -27,7 +27,7 @@ describe('napi', () => {
 
   it('should create a napi project', () => {
     runNxCommand(
-      `generate @monodon/rust:lib napi-proj --napi`,
+      `generate @antoniog/rust:lib napi-proj --napi`,
       projectDirectory
     );
 

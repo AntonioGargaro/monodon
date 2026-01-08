@@ -16,9 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monodon/rust": ["packages/rust/src/index.ts"],
-      "@monodon/test-lib": ["packages/test-lib/src/index.ts"],
-      "@monodon/typescript-nx-imports-plugin": [
+      "@antoniog/rust": ["packages/rust/src/index.ts"],
+      "@antoniog/test-lib": ["packages/test-lib/src/index.ts"],
+      "@antoniog/typescript-nx-imports-plugin": [
         "packages/typescript-nx-imports-plugin/src/index.ts"
       ]
     }

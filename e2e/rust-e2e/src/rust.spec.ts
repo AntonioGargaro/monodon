@@ -12,7 +12,7 @@ describe('rust', () => {
 
     // The plugin has been built and published to a local registry in the jest globalSetup
     // Install the plugin built with the latest source code into the test repo
-    execSync(`yarn add -D @monodon/rust@e2e`, {
+    execSync(`yarn add -D @antoniog/rust@e2e`, {
       cwd: projectDirectory,
       stdio: 'inherit',
       env: process.env,
@@ -29,15 +29,15 @@ describe('rust', () => {
 
   it('should be installed', () => {
     // npm ls will fail if the package is not installed properly
-    execSync('npm ls @monodon/rust', {
+    execSync('npm ls @antoniog/rust', {
       cwd: projectDirectory,
       stdio: 'inherit',
     });
   });
 
   it('should generate a cargo project and update the project graph', () => {
-    runNxCommand(`generate @monodon/rust:bin hello-world`, projectDirectory);
-    runNxCommand(`generate @monodon/rust:lib lib1`, projectDirectory);
+    runNxCommand(`generate @antoniog/rust:bin hello-world`, projectDirectory);
+    runNxCommand(`generate @antoniog/rust:lib lib1`, projectDirectory);
 
     execSync('cargo add itertools -p lib1', { cwd: projectDirectory });
     execSync(`cargo add lib1 --path ./lib1 -p hello_world`, {

@@ -10,7 +10,7 @@ export function addBuildExecutor(
 ): TargetConfiguration {
   return {
     cache: true,
-    executor: '@monodon/rust:build',
+    executor: '@antoniog/rust:build',
     outputs: ['{options.target-dir}'],
     options: {
       ...additionalOptions,
@@ -27,7 +27,7 @@ export function addCheckExecutor(
   additionalOptions?: BuildExecutorSchema
 ): TargetConfiguration {
   return {
-    executor: '@monodon/rust:check',
+    executor: '@antoniog/rust:check',
     outputs: ['{options.target-dir}'],
     options: {
       ...additionalOptions,
@@ -40,7 +40,7 @@ export function addTestExecutor(
 ): TargetConfiguration {
   return {
     cache: true,
-    executor: '@monodon/rust:test',
+    executor: '@antoniog/rust:test',
     outputs: ['{options.target-dir}'],
     options: {
       ...additionalOptions,
@@ -57,7 +57,7 @@ export function addRunExecutor(
   additionalOptions?: RunExecutorSchema
 ): TargetConfiguration {
   return {
-    executor: '@monodon/rust:run',
+    executor: '@antoniog/rust:run',
     outputs: ['{options.target-dir}'],
     options: {
       ...additionalOptions,
@@ -75,7 +75,7 @@ export function addLintExecutor(
 ): TargetConfiguration {
   return {
     cache: true,
-    executor: '@monodon/rust:lint',
+    executor: '@antoniog/rust:lint',
     outputs: ['{options.target-dir}'],
     options: {
       ...additionalOptions,
@@ -88,7 +88,7 @@ export function addWasmPackExecutor(
 ): TargetConfiguration {
   return {
     cache: true,
-    executor: '@monodon/rust:wasm-pack',
+    executor: '@antoniog/rust:wasm-pack',
     outputs: ['{options.target-dir}'],
     options: {
       ...additionalOptions,

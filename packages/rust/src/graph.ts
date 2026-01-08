@@ -90,7 +90,7 @@ function processCargoMetadata(ctx: CreateNodesContext | CreateNodesContextV2): {
       if (!isPrivate) {
         targets['nx-release-publish'] = {
           dependsOn: ['^nx-release-publish'],
-          executor: '@monodon/rust:release-publish',
+          executor: '@antoniog/rust:release-publish',
           options: {},
         };
       }
@@ -101,7 +101,7 @@ function processCargoMetadata(ctx: CreateNodesContext | CreateNodesContextV2): {
         targets,
         release: {
           version: {
-            generator: '@monodon/rust:release-version',
+            generator: '@antoniog/rust:release-version',
           },
         },
       };

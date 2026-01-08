@@ -1,9 +1,12 @@
 {
-  "name": "@monodon/rust",
+  "name": "@antoniog/rust",
   "version": "0.0.0-updated-during-release",
   "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
-    "url": "https://github.com/cammisuli/monodon",
+    "url": "https://github.com/antoniogargaro/monodon",
     "type": "git"
   },
   "license": "MIT",

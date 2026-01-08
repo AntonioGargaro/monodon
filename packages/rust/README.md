@@ -1,9 +1,9 @@
-# @monodon/rust
+# @antoniog/rust
 
 A Nx plugin that adds support for Cargo and Rust in your Nx workspace.
 
 ## Compatibility Chart
-|@monodon/rust|nx|
+|@antoniog/rust|nx|
 |---|---
 |<=1.2.1|<=17.1.0|
 |>=1.3.0|>=17.1.0|
@@ -12,58 +12,58 @@ A Nx plugin that adds support for Cargo and Rust in your Nx workspace.
 ## Getting Started
 
 ### Prerequisites
-The following tools need to be installed on your system to take full advantage of `@monodon/rust`
+The following tools need to be installed on your system to take full advantage of `@antoniog/rust`
 * Node (LTS)
 * Rust / Cargo via [https://rustup.rs](https://rustup.rs)
 
 ### Install with `npx create-nx-workspace` preset
-To bootstrap a new workspace with `@monodon/rust` installed and ready, run:
+To bootstrap a new workspace with `@antoniog/rust` installed and ready, run:
 
 ```shell
-npx create-nx-workspace --preset=@monodon/rust
+npx create-nx-workspace --preset=@antoniog/rust
 ```
 
 ### Installation in already set up workspace
 Use your favourite package manager to install in your project:
 
 ```shell
-yarn add -D @monodon/rust
+yarn add -D @antoniog/rust
 ```
 
 ```shell
-npm install -D @monodon/rust
+npm install -D @antoniog/rust
 ```
 
 ```shell
-pnpm add -D @monodon/rust
+pnpm add -D @antoniog/rust
 ```
 
 #### Initialization
 
-After installing, you can run any of the project generators (binary, library) to have @monodon/rust set up Cargo in your workspace.
+After installing, you can run any of the project generators (binary, library) to have @antoniog/rust set up Cargo in your workspace.
 
 ## Generators
 Use Nx Console to see the full list of options for each generator.
 
-### `@monodon/rust:binary`
+### `@antoniog/rust:binary`
 Creates a Rust binary application to be run independently.
 
 > Create a new binary:
 > ```shell
-> nx generate @monodon/rust:binary my-rust-app
+> nx generate @antoniog/rust:binary my-rust-app
 > ```
 
-### `@monodon/rust:library`
+### `@antoniog/rust:library`
 Creates a Rust library that can be used in binaries, or compiled to be used for napi.
 
 > Create a new library:
 > ```shell
-> nx generate @monodon/rust:library my-rust-lib
+> nx generate @antoniog/rust:library my-rust-lib
 > ```
 
 > Create a new library with napi:
 > ```shell
-> nx generate @monodon/rust:library my-rust-node-lib --napi
+> nx generate @antoniog/rust:library my-rust-node-lib --napi
 > ```
 
 #### Napi
@@ -84,19 +84,19 @@ All the executors support these additional properties:
 * args
   * [Arguments forwarding](https://nx.dev/nx-api/nx/executors/run-commands#args) to the executor.
 
-### `@monodon/rust:build`
+### `@antoniog/rust:build`
 Runs cargo to build the project
 > Not supported with napi
 
-### `@monodon/rust:lint`
+### `@antoniog/rust:lint`
 Runs cargo clippy to lint the project
 
-### `@monodon/rust:napi`
+### `@antoniog/rust:napi`
 Runs the napi cli to build the project
 
-### `@monodon/rust:run`
+### `@antoniog/rust:run`
 Runs `cargo run` for the project
 > Not supported with napi
 
-### `@monodon/rust:test`
+### `@antoniog/rust:test`
 Runs `cargo test` for the project

@@ -45,7 +45,7 @@ function includeProjectGraphPlugin(tree: Tree) {
   if (!config) {
     return;
   }
-  (config.plugins ??= []).push('@monodon/rust');
+  (config.plugins ??= []).push('@antoniog/rust');
   updateNxJson(tree, config);
 }
 

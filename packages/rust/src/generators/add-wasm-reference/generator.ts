@@ -66,7 +66,7 @@ export default async function (
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       build: {
-        executor: '@monodon/rust:build',
+        executor: '@antoniog/rust:build',
       },
     },
     tags: normalizedOptions.parsedTags,
