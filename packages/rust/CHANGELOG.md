@@ -1,3 +1,13 @@
+## 2.3.5 (2026-03-03)
+
+### 🩹 Fixes
+
+- **rust:** force pre specifier when preid is defined in release-version ([#1](https://github.com/AntonioGargaro/monodon/pull/1))
+
+### ❤️ Thank You
+
+- Antonio Gargaro @AntonioGargaro
+
 ## 2.3.4 (2026-01-08)
 
 ### 🩹 Fixes
