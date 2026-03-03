@@ -20,7 +20,10 @@ import {
   resolveSemverSpecifierFromConventionalCommits,
   resolveSemverSpecifierFromPrompt,
 } from 'nx/src/command-line/release/utils/resolve-semver-specifier';
-import { deriveNewSemverVersion, isValidSemverSpecifier } from 'nx/src/command-line/release/utils/semver';
+import {
+  deriveNewSemverVersion,
+  isValidSemverSpecifier,
+} from 'nx/src/command-line/release/utils/semver';
 import { validReleaseVersionPrefixes } from 'nx/src/command-line/release/version';
 import { interpolate } from 'nx/src/tasks-runner/utils';
 import { prerelease } from 'semver';
@@ -174,9 +177,12 @@ To fix this you will either need to add a Cargo.toml file at that location, or c
               {
                 // subject to breaking
                 preid: options.preid,
-                checkAllBranchesWhen: options.releaseGroup.releaseTagPatternCheckAllBranchesWhen,
-                releaseTagPatternRequireSemver: options.releaseGroup.releaseTagPatternRequireSemver,
-                releaseTagPatternStrictPreid: options.releaseGroup.releaseTagPatternStrictPreid,
+                checkAllBranchesWhen:
+                  options.releaseGroup.releaseTagPatternCheckAllBranchesWhen,
+                releaseTagPatternRequireSemver:
+                  options.releaseGroup.releaseTagPatternRequireSemver,
+                releaseTagPatternStrictPreid:
+                  options.releaseGroup.releaseTagPatternStrictPreid,
               }
             );
             if (!latestMatchingGitTag) {
@@ -291,6 +297,12 @@ To fix this you will either need to add a Cargo.toml file at that location, or c
               specifier = 'prerelease';
               log(
                 `📄 Resolved the specifier as "${specifier}" since the current version is a prerelease.`
+              );
+            } else if (options.preid && !specifier.startsWith('pre')) {
+              const prevSpecifier = specifier;
+              specifier = `pre${prevSpecifier}`;
+              log(
+                `📄 Resolved the specifier as "${specifier}" as the specifier was "${prevSpecifier}" and preid is defined.`
               );
             } else {
               log(
