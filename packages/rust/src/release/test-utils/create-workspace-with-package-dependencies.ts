@@ -1,6 +1,6 @@
 import { ProjectGraph, Tree } from '@nx/devkit';
-import { CargoToml } from '../../../models/cargo.toml';
-import { modifyCargoTable, stringifyCargoToml } from '../../../utils/toml';
+import { CargoToml } from '../../models/cargo.toml';
+import { modifyCargoTable, stringifyCargoToml } from '../../utils/toml';
 
 interface ProjectAndPackageData {
   [projectName: string]: {

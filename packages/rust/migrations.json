@@ -1,5 +1,11 @@
 {
-  "generators": {},
+  "generators": {
+    "update-to-nx-22": {
+      "version": "3.0.0-beta.0",
+      "description": "Updates release configuration from generator-based to version-actions-based for NX 22 compatibility",
+      "factory": "./src/migrations/update-to-nx-22/update-to-nx-22"
+    }
+  },
   "packageJsonUpdates": {
     "2.0.0": {
       "version": "2.0.0-beta.1",
