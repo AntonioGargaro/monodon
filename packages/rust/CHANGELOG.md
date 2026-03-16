@@ -1,3 +1,14 @@
+## 2.4.0-rc.0 (2026-03-16)
+
+### 🚀 Features
+
+- migrate plugin to NX 22 Version Actions API ([5f67334](https://github.com/AntonioGargaro/monodon/commit/5f67334))
+
+### ❤️ Thank You
+
+- antoniogargaro
+- Claude Opus 4.6 (1M context)
+
 ## 2.3.5 (2026-03-03)
 
 ### 🩹 Fixes
