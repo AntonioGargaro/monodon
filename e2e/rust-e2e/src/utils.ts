@@ -1,5 +1,5 @@
 import { dirname, join } from 'path';
-import { mkdirSync, rmSync } from 'fs';
+import { existsSync, mkdirSync, rmSync } from 'fs';
 import { execSync } from 'child_process';
 import { tmpProjPath } from '@nx/plugin/testing';
 
@@ -16,9 +16,15 @@ export function createTestProject(testId = '') {
     recursive: true,
     force: true,
   });
-  mkdirSync(dirname(projectDirectory), {
-    recursive: true,
-  });
+
+  // Initialize a standalone git repo in the parent directory so that
+  // create-nx-workspace does not inherit the monorepo's .gitignore
+  // (which ignores "tmp/").
+  const parentDir = dirname(projectDirectory);
+  mkdirSync(parentDir, { recursive: true });
+  if (!existsSync(join(parentDir, '.git'))) {
+    execSync('git init', { cwd: parentDir, stdio: 'inherit' });
+  }
 
   execSync(
     `npx --yes create-nx-workspace@latest ${projectName} --preset apps --nxCloud=skip --no-interactive --packageManager yarn`,

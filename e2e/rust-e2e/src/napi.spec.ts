@@ -10,7 +10,7 @@ describe('napi', () => {
 
     // The plugin has been built and published to a local registry in the jest globalSetup
     // Install the plugin built with the latest source code into the test repo
-    execSync(`yarn add -D @antoniog/rust@e2e`, {
+    execSync(`yarn add -W -D @antoniog/rust@e2e`, {
       cwd: projectDirectory,
       stdio: 'inherit',
       env: process.env,
@@ -31,7 +31,7 @@ describe('napi', () => {
       projectDirectory
     );
 
-    const projectConfigPath = `test-project-napi/napi_proj/project.json`;
+    const projectConfigPath = `test-project-napi/packages/napi_proj/project.json`;
     const projectFile = JSON.parse(readFile(projectConfigPath));
     projectFile['targets']['build']['options'] = {
       ...projectFile['targets']['build']['options'],
@@ -40,7 +40,7 @@ describe('napi', () => {
     };
     updateFile(projectConfigPath, JSON.stringify(projectFile, null, 2));
 
-    expect(listFiles(`test-project-napi/napi_proj/npm`).length).toBeGreaterThan(
+    expect(listFiles(`test-project-napi/packages/napi_proj/npm`).length).toBeGreaterThan(
       0
     );
 
@@ -48,7 +48,7 @@ describe('napi', () => {
       runNxCommand(`build napi_proj`, projectDirectory)
     ).not.toThrow();
 
-    const files = listFiles(`test-project-napi/napi_proj`);
+    const files = listFiles(`test-project-napi/packages/napi_proj`);
     expect(files.some((file) => file.endsWith('native.js'))).toBeTruthy();
     expect(files.some((file) => file.endsWith('native.d.ts'))).toBeTruthy();
     expect(files.some((file) => file.endsWith('.node'))).toBeTruthy();
@@ -59,7 +59,7 @@ describe('napi', () => {
         projectDirectory
       )
     ).not.toThrow();
-    const files2 = listFiles(`test-project-napi/napi_proj`);
+    const files2 = listFiles(`test-project-napi/packages/napi_proj`);
     expect(
       files2.some((file) => file.endsWith('wasm32-wasi.wasm'))
     ).toBeTruthy();

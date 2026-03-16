@@ -12,7 +12,7 @@ describe('rust', () => {
 
     // The plugin has been built and published to a local registry in the jest globalSetup
     // Install the plugin built with the latest source code into the test repo
-    execSync(`yarn add -D @antoniog/rust@e2e`, {
+    execSync(`yarn add -W -D @antoniog/rust@e2e`, {
       cwd: projectDirectory,
       stdio: 'inherit',
       env: process.env,
@@ -40,7 +40,7 @@ describe('rust', () => {
     runNxCommand(`generate @antoniog/rust:lib lib1`, projectDirectory);
 
     execSync('cargo add itertools -p lib1', { cwd: projectDirectory });
-    execSync(`cargo add lib1 --path ./lib1 -p hello_world`, {
+    execSync(`cargo add lib1 --path ./packages/lib1 -p hello_world`, {
       cwd: projectDirectory,
     });
     expect(() =>

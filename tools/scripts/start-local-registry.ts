@@ -4,6 +4,7 @@
  */
 import { startLocalRegistry } from '@nx/js/plugins/jest/local-registry';
 import { releasePublish, releaseVersion } from 'nx/release';
+import { execSync } from 'node:child_process';
 
 export default async () => {
   // local registry target to run
@@ -24,8 +25,15 @@ export default async () => {
     stageChanges: false,
     verbose: true,
   });
+  // Override any scoped registry config (e.g. @antoniog:registry in ~/.npmrc)
+  // so that npm publish targets the local verdaccio instead of npmjs.org.
+  execSync('npm config set @antoniog:registry http://localhost:3889/', {
+    stdio: 'inherit',
+  });
+
   await releasePublish({
     tag: 'e2e',
+    firstRelease: true,
     verbose: true,
   });
 };

@@ -81,7 +81,7 @@ const yargs = require('yargs');
       maxBuffer: 1024 * 1024 * 1024, // 1GB
     });
 
-    const { workspaceVersion, projectsVersionData } = await releaseVersion({
+    const { workspaceVersion, projectsVersionData, releaseGraph } = await releaseVersion({
       specifier: options.version,
       dryRun: options.dryRun,
       verbose: options.verbose,
